@@ -1,0 +1,386 @@
+/* Global Styles */
+:root {
+    --primary-color: #e10600;  /* F1 Red */
+    --secondary-color: #1E1E1E;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 56px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 500px;
+    background: url('../images/Logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(14, 33, 50);
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(14, 33, 50, 0.1);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero .lead {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--secondary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Team Section */
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.placeholder-img {
+    background: linear-gradient(45deg, #f0f0f0 25%, #e6e6e6 25%, #e6e6e6 50%, #f0f0f0 50%, #f0f0f0 75%, #e6e6e6 75%, #e6e6e6 100%);
+    background-size: 20px 20px;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* Sponsors Section */
+.sponsor-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.sponsor-logo {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsor-link .sponsor-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.sponsor-logo img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.sponsor-logo h5 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.sponsor-desc {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.visit-site {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sponsor-link .sponsor-logo:hover .visit-site {
+    opacity: 1;
+}
+
+.sponsor-link .sponsor-logo:hover {
+    background-color: #fff;
+}
+
+.sponsor-card {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+}
+
+.sponsor-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.sponsor-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+#sponsors {
+    background-color: #f8f9fa;
+}
+
+/* Car Section */
+#car {
+    background-color: #f8f9fa;
+}
+
+.car-box {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.car-image-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: -25px -25px 25px -25px;
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.car-image-container img {
+    max-width: 70%;
+    height: auto;
+    display: inline-block;
+}
+
+.car-image-container .overlay {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    background: rgba(225, 6, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 25px;
+    width: auto;
+}
+
+.car-image-container:hover .overlay {
+    opacity: 1;
+}
+
+.car-image-container .overlay .text {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.model-link {
+    text-decoration: none;
+    color: white;
+}
+
+.model-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.car-content {
+    padding: 0 15px;
+}
+
+.car-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.car-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.car-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.car-section p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Contact Form */
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(225, 6, 0, 0.25);
+}
+
+#contact .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+}
+
+#formStatus {
+    transition: all 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+}
